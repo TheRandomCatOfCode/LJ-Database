@@ -1,100 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comment System Integration Test</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            color: #333;
-            line-height: 1.6;
-        }
-        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
-        h2 { color: #007bff; margin-top: 40px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-        .setup-note {
-            background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin-bottom: 30px;
-            border-radius: 4px;
-        }
-        .comment-container {
-            background: #fafafa;
-            border: 1px solid #e1e1e1;
-            padding: 20px;
-            border-radius: 6px;
-            margin-top: 15px;
-        }
-    </style>
-</head>
-<body>
+<html>
+    <div class="giscus">
 
-    <h1>Third-Party Comment Systems</h1>
-    
-    <div class="setup-note">
-        <strong>⚠️ Testing Requirement:</strong> You must update the capitalized placeholder strings in the <code>&lt;script&gt;</code> tags below with your actual account registration details for the comment feeds to load properly.
     </div>
-
-    <!-- ==================================================================== -->
-    <!-- OPTION 1: DISQUS INTEGRATION BLOCK -->
-    <!-- ==================================================================== -->
-    <h2>Option 1: Disqus Section</h2>
-    <p>Best for general audiences. Requires registering a site on Disqus.com to get a shortname.</p>
-    
-    <div class="comment-container">
-        <!-- Target div where Disqus will inject the comment layout -->
-        <div id="disqus_thread"></div>
-        
-        <script>
-            var disqus_config = function () {
-                this.page.url = window.location.href;  
-                this.page.identifier = window.location.pathname; 
-            };
-            (function() { 
-                var d = document, s = d.createElement('script');
-                
-                // CRITICAL STEP: Replace 'YOUR_SHORTNAME' with your actual Disqus shortname
-                s.src = 'https://YOUR_://disqus.com'; 
-                
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com">comments powered by Disqus.</a></noscript>
-    </div>
-
-
-    <!-- ==================================================================== -->
-    <!-- OPTION 2: GISCUS INTEGRATION BLOCK -->
-    <!-- ==================================================================== -->
-    <h2>Option 2: Giscus Section</h2>
-    <p>Best for developers. Requires a public GitHub repository with the Discussions feature turned on.</p>
-    
-    <div class="comment-container">
-        <!-- Target div where Giscus will inject the comment layout -->
-        <div class="giscus"></div>
-
-        <!-- CRITICAL STEP: Replace all attributes starting with 'YOUR_' or 'YOUR_...' with data from giscus.app -->
-        <script src="https://giscus.app"
-                data-repo="lj3368-blip/LJ-s-Database"
-                data-repo-id="YOUR_REPO_ID_HERE"
-                data-category="Announcements"
-                data-category-id="YOUR_CATEGORY_ID_HERE"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="light"
-                data-lang="en"
-                crossorigin="anonymous"
-                async>
-        </script>
-    </div>
-
-</body>
+    <script src="https://giscus.app/client.js"
+        data-repo="TheRandomCatOfCode/LJ-Database"
+        data-repo-id="R_kgDOSe2NZg"
+        data-category="General"
+        data-category-id="DIC_kwDOSe2NZs4C9J7W"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+    </script>
 </html>
